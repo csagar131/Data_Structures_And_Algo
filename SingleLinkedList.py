@@ -13,7 +13,7 @@ list = SingleLinked()
 def insertAtBeg(value):
     if list.start == None:
         list.start = Node(value)
-        list.start.link = None1
+        list.start.link = None
     else:
         lnk = list.start
         list.start = Node(value)
@@ -30,18 +30,19 @@ def traverseLinked():
 print('press 1 for insert at begg')
 print('press 2 for traverse linked list')
 print('press 3 for exit')
-n = int(input("Press Number"))
+n = int(input("Press Number:-"))
 while True:
     print('press 1 for insert at begg')
     print('press 2 for traverse linked list')
     print('press 3 for exit')
 
     if n == 1:
-        value = int(input('Enter Integer value:'))
+        value = int(input('Enter Integer value:-'))
         insertAtBeg(value)
         print('value ' + str(value) + ' inseted')
-        n = int(input("Press Number:"))
+        n = int(input("Press Number:-"))
     elif n == 2:
         n = traverseLinked()
+        print()
     else:
         break
