@@ -38,13 +38,38 @@ def bubbleSort():
                 p.info = q.info   #exchanging the info part if p.info > q.info
                 q.info = k         # ie if previous node data is grater the nexts nodes
             q = q.link
+        traverseLinked()
+        print()
         p = p.link
         q = p.link
+
+def strictBubbleSort():
+    end = None
+    k = list.start.link
+    while end is not k:
+        p = list.start
+        q = p.link
+        while p.link is not end:
+            if p.info > q.info:  # throwing AttributeError at last need to review
+                k = p.info
+                p.info = q.info  # exchanging the info part if p.info > q.info
+                q.info = k  # ie if previous node data is grater the nexts nodes
+            q = q.link
+            p = p.link
+        traverseLinked()
+        print()
+        end = p
+    print("final sorted list:")
+    traverseLinked()
+
+
 
 
 n = 0
 print('press 1 for insert at end')
 print('press 2 for traverse linked list')
+print('press 3 for sort linked list')
+print('press 4 for bubbles sort linked list')
 
 print('press 111 for exit')
 
@@ -62,6 +87,9 @@ while n is not 111:
 
     elif n == 3:
         bubbleSort()
+        continue
+    elif n == 4:
+        strictBubbleSort()
         continue
     else:
         break
