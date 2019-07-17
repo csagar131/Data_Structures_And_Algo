@@ -28,7 +28,7 @@ def traverseLinked():
             print(str(p.info) + ' ' ,end=' ')
             p = p.link
 
-def bubbleSort():
+def sort():
     p = list.start  # points to first node
     q = p.link      # points to node next to p
     while p.link is not None:
@@ -43,7 +43,7 @@ def bubbleSort():
         p = p.link
         q = p.link
 
-def strictBubbleSort():
+def bubbleSort():
     end = None
     k = list.start.link
     while end is not k:
@@ -86,10 +86,10 @@ while n is not 111:
         print()
 
     elif n == 3:
-        bubbleSort()
+        sort()
         continue
     elif n == 4:
-        strictBubbleSort()
+        bubbleSort()
         continue
     else:
         break
