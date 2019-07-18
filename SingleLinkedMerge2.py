@@ -60,7 +60,7 @@ p2 = list2.start
 p = list               # for easy identify purpose
 
 # merging two list
-while p1.link is not None and p2.link is not None:
+while p1.link is not None or p2.link is not None:
     if p.start is None:
         if p1.info < p2.info:
             insertAtEnd(p1.info,p)
@@ -75,6 +75,17 @@ while p1.link is not None and p2.link is not None:
         else:
             insertAtEnd(p2.info, p)
             p2 = p2.link
+
+# when list1 pointer points to None
+while p2 is not None:
+    insertAtEnd(p2.info,p)
+    p2 = p2.link
+
+
+while p1 is not None:
+    insertAtEnd(p1.info,p)
+    p1 = p1.link
+
 print("-----------------------------")
 traverseLinked(list)
 
