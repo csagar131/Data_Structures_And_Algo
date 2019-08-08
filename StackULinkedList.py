@@ -65,12 +65,5 @@ while choice is not 0:
         display()
     else:
         break
-    
 
         
-
-
-
-
-
-
