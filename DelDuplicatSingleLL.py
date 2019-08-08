@@ -46,7 +46,7 @@ def removeDuplicate():
 p = ''' 
      press 1 to insert at end
      press 2 to traverse the list
-     press 3 to remove all the duplicate element 
+     press 3 to remove all the duplicate elements
 '''
 print(p)
 
