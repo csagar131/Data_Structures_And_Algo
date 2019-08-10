@@ -118,10 +118,6 @@ def insertBetNodes(val,n):
         p.link.link = addr
 
 
-
-
-
-
 n = 0
 print('press 1 for insert at begg')
 print('press 2 for traverse linked list')
