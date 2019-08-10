@@ -9,16 +9,40 @@ class BinaryTree:
         self.root = None
     
     def preorder(self):
-        self.preorderTraver(self.root)
+        self.preorderTravers(self.root)
         print()
 
-    def preorderTraver(self,k):
+    def inorder(self):
+        self.inorderTravers(self.root)
+        print()
+    
+    def postorder(self):
+        self.postorderTravers(self.root)
+        print()
+    
+    def postorderTravers(self,k):
+        p = k
+        if p is None:
+            return
+        self.postorderTravers(p.lchild)
+        self.postorderTravers(p.rchild)
+        print(p.info,end=" ")
+
+    def inorderTravers(self,k):
+        p = k
+        if p is None:
+            return
+        self.inorderTravers(p.lchild)
+        print(p.info,end=" ")
+        self.inorderTravers(p.rchild)
+
+    def preorderTravers(self,k):
         p = k
         if p is None:
             return
         print(p.info,end=" ")
-        self.preorderTraver(p.lchild)
-        self.preorderTraver(p.rchild)
+        self.preorderTravers(p.lchild)
+        self.preorderTravers(p.rchild)
     
     def insertTree(self,data=None):
         if self.root is None:
@@ -60,6 +84,8 @@ s = """
 0 for close
 1 for insert continue
 2 for preorder traverse
+3 for inorder traverse
+4 for postorder traverse
 """
 
 b = BinaryTree()
@@ -71,10 +97,21 @@ while n is not 0:
     if n == 1:
         data = int(input("ENter Number:"))
         b.insertTree(data)
-    if n ==2:
+    elif n ==2:
         print("preorder traversing---->")
         b.preorder()
         break
+    elif n == 3:
+        print("inorder traversing---->")
+        b.inorder()
+        break
+    elif n == 4:
+        print("postorder traversing--->")
+        b.postorder()
+        break
+    else:
+        continue
+
     
 
 
