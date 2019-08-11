@@ -1,3 +1,5 @@
+from collections import deque
+
 class Node:
     def __init__(self,data):
         self.info = data
@@ -19,6 +21,34 @@ class BinaryTree:
     def postorder(self):
         self.postorderTravers(self.root)
         print()
+
+    def leveorder(self):
+        self.levelorderTravers(self.root)
+        print()
+    
+    def levelorderTravers(self,k):
+        p = k
+        queue = deque([p])
+        if p is None:
+            return 
+        else:
+            while p is not None or len(queue) is not 0:
+                flag = all(v is None for v in queue)
+                if queue[0] is not None:
+                    print(queue[0].info,end=" ")
+                else:
+                    if not flag:
+                        queue.popleft()
+                        continue
+                    else:
+                        break
+                p=queue.popleft()
+                queue.append(p.lchild)
+                queue.append(p.rchild)
+
+
+
+
     
     def postorderTravers(self,k):
         p = k
@@ -86,6 +116,7 @@ s = """
 2 for preorder traverse
 3 for inorder traverse
 4 for postorder traverse
+5 for level order traverse
 """
 
 b = BinaryTree()
@@ -108,6 +139,10 @@ while n is not 0:
     elif n == 4:
         print("postorder traversing--->")
         b.postorder()
+        break
+    elif n == 5:
+        print("level order traversal--->")
+        b.leveorder()
         break
     else:
         continue
