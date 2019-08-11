@@ -45,10 +45,6 @@ class BinaryTree:
                 p=queue.popleft()
                 queue.append(p.lchild)
                 queue.append(p.rchild)
-
-
-
-
     
     def postorderTravers(self,k):
         p = k
