@@ -10,3 +10,6 @@ print(queue)
 print(queue.popleft())                  
 print(queue.popleft())                  
 print(queue) 
+
+#################################################################
+all(v is None for v in queue)    #return True if all element in list are None
