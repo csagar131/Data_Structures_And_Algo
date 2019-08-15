@@ -26,6 +26,25 @@ class BinaryTree:
         self.levelorderTravers(self.root)
         print()
     
+    def height(self):
+        ans=self.findHeightOfTree(self.root)
+        print()
+        print(ans)
+
+
+    def findHeightOfTree(self,k):
+        p = k
+        if p is None:
+            return 0
+
+        hl = self.findHeightOfTree(p.lchild)
+        hr = self.findHeightOfTree(p.rchild)
+
+        if hl > hr:
+            return 1+hl
+        else:
+            return 1 + hr
+    
     def levelorderTravers(self,k):
         p = k
         queue = deque([p])
@@ -113,6 +132,7 @@ s = """
 3 for inorder traverse
 4 for postorder traverse
 5 for level order traverse
+6 for height of tree
 """
 
 b = BinaryTree()
@@ -127,21 +147,25 @@ while n is not 0:
     elif n ==2:
         print("preorder traversing---->")
         b.preorder()
-        break
+        continue
     elif n == 3:
         print("inorder traversing---->")
         b.inorder()
-        break
+        continue
     elif n == 4:
         print("postorder traversing--->")
         b.postorder()
-        break
+        continue
     elif n == 5:
         print("level order traversal--->")
         b.leveorder()
-        break
-    else:
         continue
+    elif n == 6:
+        print("here is height of the tree")
+        b.height()
+        continue
+    else:
+        break
 
     
 
