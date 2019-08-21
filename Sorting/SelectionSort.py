@@ -12,3 +12,9 @@ for i in range(len(lst)-1):
     lst[i],lst[minind] = lst[minind],lst[i]
 print("after sorting")
 print(lst) 
+
+
+'''
+time complexity will be O(n^2)
+not best sorting algorithm
+'''
