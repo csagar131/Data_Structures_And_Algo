@@ -17,4 +17,5 @@ print(lst)
 '''
 time complexity will be O(n^2)
 not best sorting algorithm
+Space complexity: O(1)
 '''
