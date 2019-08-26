@@ -17,3 +17,8 @@ print(lst)
 for i,j in enumerate(lst):
     if j == 1:
         print(i)
+
+'''
+time complexity will O(n*loglog(n))
+
+'''
