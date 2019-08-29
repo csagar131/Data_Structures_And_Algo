@@ -24,7 +24,7 @@ public class NoCircularRot
             int next = (mid+1) % n;
             int prev = (mid-1+n) % n;
                 
-            if(arr[mid] <= arr[next] && arr[mid] >= arr[prev])
+            if(arr[mid] <= arr[next] && arr[mid] <= arr[prev])
             {  
                
                 res = mid;
